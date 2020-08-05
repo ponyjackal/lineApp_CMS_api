@@ -2,10 +2,10 @@ class Api::V1::AuthController < ApplicationController
     skip_before_action :authorized, only: [:create]
 
     def create
-        admin = Admin.find_by(name: admin_login_params[:name])
+        admin = Admin.find_by(email: admin_login_params[:email])
         if admin && admin.authenticate(admin_login_params[:password])
             token = issue_token(admin)
-            render json: {admin: AdminSerializer.new(admin), jwt: token}
+            render json: {admin: AdminSerializer.new(admin), access_token: token}
         else
             render json: {error: 'That user could not be found'}, status: 401
         end
@@ -22,6 +22,6 @@ class Api::V1::AuthController < ApplicationController
 
     private
     def admin_login_params
-        params.require(:admin).permit(:name, :password)
+        params.permit(:email, :password)
     end
 end
