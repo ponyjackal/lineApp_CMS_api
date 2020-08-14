@@ -45,3 +45,5 @@ gem "jwt", "~> 2.2"
 
 #Serializer for active model
 gem "active_model_serializers", "~> 0.10.10"
+
+gem "passenger"
