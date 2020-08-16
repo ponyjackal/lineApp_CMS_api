@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_08_03_033549) do
 
-  create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "Admins", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_08_03_033549) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "faqs", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "Faqs", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "question"
     t.string "answer"
     t.datetime "created_at", precision: 6, null: false
