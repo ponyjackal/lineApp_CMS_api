@@ -7,9 +7,10 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*'
-    resource '*', headers: :any, methods: [:get, :post, :patch, :put]
+    origins ['http://beta2-lineapp.simplyintense.com/']
+    resource '*',
+             headers: :any,
+             methods: %i(get post put patch options head)
   end
 end
-
 Rails.application.config.hosts << "simplyintense.com"
