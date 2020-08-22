@@ -106,5 +106,5 @@ Rails.application.configure do
   
   # Allow requests from subdomains like `www.simplyintense.com` and
   # `beta1.simplyintense.com`.
-  Rails.application.config.hosts << /.*\.simplyintense\.com/
+  config.hosts << "beta3-lineapp.simplyintense.com"
 end
