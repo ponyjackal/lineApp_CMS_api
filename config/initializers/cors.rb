@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*'
+    origins ['http://beta2-lineapp.simplyintense.com']
     resource '*',
              headers: :any,
              methods: %i(get post put patch options head)
